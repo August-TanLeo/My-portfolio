@@ -57,7 +57,7 @@ nav{
 }
 .text-box p{
     margin: 10px 0 40px;
-    font-size: 14px;
+    font-size: 20px;
     color: #fff;
 }
 .hero-btn{
@@ -76,37 +76,192 @@ nav{
     background: #4c949f;
     transition: 0.8s;
 }
-@media(max-width: 700px){
-    .text-box h1{
-        font-size: 20px;
-    }
-    .nav-links ul li{
-        display: block;
-    }
-    .nav-links{
-        position: absolute;
-        background: #4c949f;
-        height:100vh;
-        width: 200px;
-        top: 0;
-        right: 0;
-        text-align: left;
-        z-index: 2;   
-    }
-}
-/* About */
+
+/* BLOG */
+.blog-page {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(21, 21, 21, 0.7),rgba(4,9,30,0.7)),url(Images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color:#111;
+    line-height:1.4;
+    font-family:system-ui, Arial, sans-serif;
+  }
+  
+  /* ---------- NAV (reuse yours; sample tweaks) ---------- */
+  .nav-links ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    gap:2rem;
+    justify-content:center;
+  }
+  .nav-links a {
+    text-decoration:none;
+    font-weight:600;
+    color:#fff;
+    padding:0.25rem 0.5rem;
+  }
+  .nav-links a.active,
+  .nav-links a:hover {
+    border-bottom:2px solid #fff;
+  }
+  
+  /* If your nav sits over hero image, make it transparent */
+  nav {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:1rem 2rem;
+    z-index:10;
+  }
+  
+  /* ---------- HERO ---------- */
+  .blog-hero {
+    position:relative;
+    width:100%;
+    min-height:45vh; /* adjust */
+    background:url("images/hero-bg.jpg") center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;  /* anchor text bottom-left like screenshot */
+    padding:4rem 2rem 6rem; /* bottom padding so it doesn’t sit flush */
+    box-sizing:border-box;
+  }
+  .blog-hero__overlay {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45); /* darken bg for text contrast */
+  }
+  .blog-hero__content {
+    position:relative;
+    max-width:600px;
+    color:#ffffff;
+    text-align:left;
+  }
+  .blog-hero__content h1 {
+    margin:0 0 0.5rem;
+    font-weight:700;
+    line-height:1.1;
+    /* responsive size: min 2rem, pref 5vw, max 3.5rem */
+    font-size:clamp(2rem,5vw,3.5rem);
+  }
+  .blog-hero__content p {
+    margin:0;
+    color: #ffffff;
+    font-size:1.1rem;
+    max-width:55ch;
+  }
+  
+  /* ---------- BLOG GRID WRAPPER ---------- */
+  .blog-grid-wrapper {
+    max-width:1100px;
+    margin:-3rem auto 5rem; /* pull up under hero overlap vibe */
+    padding:0 1rem;
+    position:relative;
+    z-index:5;
+  }
+  
+  /* 2-column responsive grid */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 2.5rem 3rem;
+    align-items: start;
+  
+    /* ADD THIS LINE BELOW */
+    grid-auto-flow: row;
+    min-height: 200px;
+  }
+  
+  /* ---------- BLOG CARD ---------- */
+  .blog-card {
+    display: flex;
+    flex-direction: column;   /* THIS LINE: makes cards stack vertically */
+    gap: 30px;                /* adds spacing between cards */ 
+    background:#d9d7d7;
+    border-radius:20px;
+    box-shadow:0 6px 0 #00000040; 
+    overflow:hidden;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .blog-card:hover {
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.25);
+  }
+  
+  /* make the entire card clickable */
+  .blog-card__link {
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:1rem;
+    align-items:center;
+    text-decoration:none;
+    color:inherit;
+    padding:1rem 1.5rem;
+  }
+  
+  /* card image */
+  .blog-card__link img {
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+  
+  /* text */
+  .blog-card__text h2 {
+    margin:0 0 0.25rem;
+    font-size:1.15rem;
+    line-height:1.2;
+  }
+  .blog-card__cta {
+    display:inline-block;
+    font-size:0.85rem;
+    font-weight:700;
+    color:#0077ff;
+    text-decoration:underline;
+  }
+  
+  /* ---------- STAGGER EFFECT (optional) ---------- */
+  /* Slight vertical stagger for visual rhythm like your screenshot */
+  @media (min-width:700px) {
+    .blog-card:nth-child(odd) { transform:translateY(0); }
+    .blog-card:nth-child(even) { transform:translateY(40px); }
+    .blog-card:nth-child(even):hover { transform:translateY(36px); }
+  }
+  
+  /* ---------- WIDE CARD (last one spans full width) ---------- */
+  .blog-card--wide {
+    grid-column:1 / -1;
+    max-width:600px;
+    justify-self:start; /* left align like screenshot row 3 single */
+  }
+
+/* ABOUT */
 .about{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
+    min-height: 100vh;
+    width: 100%; 
+    background-image: linear-gradient(rgba(59, 58, 58, 0.7), rgba(19, 19, 19, 0.7)), url(Images/aboutpage.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+    text-align: left;
+    padding: 100px 20px; 
+    font-family: system-ui, Arial, sans-serif;
 }
 h1{
     font-size: 36px;
     font-weight: 600;
 }
 p{
-    color: #000000;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
@@ -119,7 +274,8 @@ p{
 }
 .course-col{
     flex-basis: 31%;
-    background: #c2e2e2;
+    justify-content: center;
+    background: #4f5c5c;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
@@ -134,6 +290,117 @@ h3{
 .course-col:hover{
     box-shadow: 0 0 20px 0px rgba(20, 18, 18, 0.2);
 }
+.achievement{
+    color: white;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+  }
+
+.about-content {
+    max-width: 725px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    text-align: left;
+    margin: - 6;
+    padding: 0 20px;
+  }
+  .who-i-am {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    max-width: 500px;
+    text-align: right;
+    color: white;
+  }
+  .c {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+    padding-top: 5px; /* tweak as needed */
+    display: inline-block; /* needed so padding works properly */
+  }
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .course-col {
+    flex: 1 1 45%;
+    margin: 10px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  .c {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-col {
+    flex: 1 1 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .c {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-col {
+    flex: 1 1 100%;
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .c {
+    font-size: 14px;
+  }
+}
+
+/* Fix flexbox row layout */
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* allows the boxes to wrap on smaller screens */
+  gap: 20px; /* add breathing space between them */
+}
+
+/* Keep course-col clean */
+.course-col {
+  flex: 1 1 30%; /* flexible 3-column layout */
+  min-width: 250px; /* prevents them from shrinking too small */
+  background-color:#373535 ;/* change back to white if you don’t want the green-grey */
+  color: #ffffff; /* ensures text is readable */
+}
+
+/* Fix "Who I Am" so it doesn’t overlap */
+.who-i-am {
+  position: static; /* remove absolute positioning */
+  margin: 20px;
+  text-align: left; /* center it under About content */
+  max-width: 700px;
+}
 
 
 
+  
+
+
+  

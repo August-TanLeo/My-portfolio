@@ -1,42 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Blog</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Healthcare Blogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- main site styles -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- optional: separate blog styles if you split files -->
+  <!-- <link rel="stylesheet" href="blog.css"> -->
 </head>
-<body>
+<body class="blog-page">
 
-    <h1>My Medicine & Health Blog</h1>
-    <p>Scroll through and explore!</p>
+  <!-- Site nav (reuse your existing) -->
+  <nav>
+    <div class="nav-links">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a class="active" href="blog.html">BLOG</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <div class="blog-container">
+  <!-- HERO -->
+  <header class="blog-hero">
+    <div class="blog-hero__overlay"></div>
+    <div class="blog-hero__content">
+      <h1>Healthcare Blogs</h1>
+      <p>Hi! I’m a high school student aspiring to study medicine and explore its intersections with research and innovation. Check out my weekly articles and share your thoughts — I’d love to hear from you!</p>
+    </div>
+  </header>
 
-        <div class="blog-card">
-            <img src="images/swimming.jpg" alt="Swimming Lessons">
-            <div class="blog-content">
-                <h4>Child & Teen Health</h4>
-                <a href="blogs/post1.html"><h2>Swimming lessons save lives: What parents should know</h2></a>
-                <p><em>Updated June 27, 2024</em></p>
-                <p>Swimming lessons help save lives and parents should know how to choose the right program...</p>
-            </div>
-        </div>
+  <!-- BLOG GRID -->
+  <main class="blog-grid-wrapper">
+    <div class="blog-grid">
 
-        <div class="blog-card">
-            <img src="images/wildfire.jpg" alt="Wildfires">
-            <div class="blog-content">
-                <h4>Staying Healthy</h4>
-                <a href="blogs/post2.html"><h2>Wildfires: How to cope when smoke affects air quality and health</h2></a>
-                <p><em>Updated June 5, 2025</em></p>
-                <p>Wildfire smoke contributes greatly to poor air quality and more of our communities are at risk...</p>
-            </div>
-        </div>
+      <!-- Card 1 -->
+      <article class="blog-card">
+        <a class="blog-card__link" href="https://medium.com/@taneesha.gupta0811/code-blue-meets-code-bytes-ais-journey-in-healthcare-06717e248741">
+          <img src="Images/CodeBlue.jpg" alt="AI in Healthcare">
+          <div class="blog-card__text">
+            <h2>Code Blue Meets Code Bytes: AI’s Journey in Healthcare</h2>
+            <span class="blog-card__cta">Read More</span>
+          </div>
+        </a>
+      </article>
 
-        <!-- Add more blog cards here -->
+      <!-- Card 2 -->
+      <article class="blog-card">
+        <a class="blog-card__link" href="https://medium.com/@taneesha.gupta0811/the-science-of-immunity-how-vaccines-protect-us-76d7c797e257">
+          <img src="Images/Vaccines.jpg" alt="Vaccines">
+          <div class="blog-card__text">
+            <h2>The Science of Immunity: How Vaccines Protect Us.</h2>
+            <span class="blog-card__cta">Read More</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="blog-card">
+        <a class="blog-card__link" href="https://medium.com/@taneesha.gupta0811/decoding-life-the-role-of-bioinformatics-in-modern-science-baabbf7891f3">
+          <img src="Images/DecodingLife.jpg" alt="Bioinformatics">
+          <div class="blog-card__text">
+            <h2>Decoding Life: The Role of Bioinformatics in Modern Science</h2>
+            <span class="blog-card__cta">Read More</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="blog-card">
+        <a class="blog-card__link" href="https://medium.com/@taneesha.gupta0811/breaking-bacterial-barriers-a-path-to-resistance-free-futures-d628e92b39a8">
+          <img src="Images/bacteria.jpg" alt="Bacterial Resistance">
+          <div class="blog-card__text">
+            <h2>Breaking Bacterial Barriers: A Path to Resistance-Free Futures</h2>
+            <span class="blog-card__cta">Read More</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 5 (single row) -->
+      <article class="blog-card blog-card--wide">
+        <a class="blog-card__link" href="https://medium.com/@taneesha.gupta0811/the-silent-patient-c6613ee8c1c7">
+          <img src="Images/TheSilentPatient.jpg" alt="The Silent Patient Book">
+          <div class="blog-card__text">
+            <h2>The Silent Patient: Is It Worth the Read?</h2>
+            <span class="blog-card__cta">Read More</span>
+          </div>
+        </a>
+      </article>
 
     </div>
-
-    <a href="index.html">Back to Home</a>
-
+  </main>
 </body>
 </html>
