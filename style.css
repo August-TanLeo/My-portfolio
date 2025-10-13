@@ -229,18 +229,18 @@ nav{
   
   /* ---------- STAGGER EFFECT (optional) ---------- */
   /* Slight vertical stagger for visual rhythm like your screenshot */
-  @media (min-width:700px) {
+ /* @media (min-width:700px) {
     .blog-card:nth-child(odd) { transform:translateY(0); }
     .blog-card:nth-child(even) { transform:translateY(40px); }
     .blog-card:nth-child(even):hover { transform:translateY(36px); }
   }
+
   
   /* ---------- WIDE CARD (last one spans full width) ---------- */
-  .blog-card--wide {
+/*  .blog-card--wide {
     grid-column:1 / -1;
     max-width:600px;
     justify-self:start; /* left align like screenshot row 3 single */
-  }
 
 /* ABOUT */
 .about{
@@ -281,7 +281,15 @@ p{
     padding: 20px 12px;
     box-sizing: border-box;
     transition: 0.5s;
+    font-family: 'Times New Roman', Times, serif; 
 }
+
+.course-col ul {
+    list-style: none; /* Removes the bullet */
+    padding: 0;      /* Removes default padding/indentation */
+    margin: 0;       /* Removes default margin */
+}
+
 h3{
     text-align: center;
     font-weight: 600;
@@ -293,7 +301,7 @@ h3{
 .achievement{
     color: white;
     font-size: 25px;
-    font-family: 'Times New Roman', Times, serif;
+    /*font-family: 'Times New Roman', Times, serif;*/
     text-decoration: none;
   }
 
