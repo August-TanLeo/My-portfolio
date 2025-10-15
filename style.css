@@ -64,14 +64,14 @@ nav{
     display: inline-block;
     text-decoration: none;
     color: #fff;
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
     padding: 12px 34px;
     font-size: 15px;
     background: transparent;
     position: relative;
     cursor: pointer;
 }
-.hero-btn:hover{
+/*.hero-btn:hover{
     border: 1px solid #4c949f;
     background: #4c949f;
     transition: 0.8s;
